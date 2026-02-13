@@ -17,12 +17,34 @@
   }
 }
 
+@mixin regularP($text-collor) {
+  color: $text-collor;
+  font-family: $Sans;
+  font-size: $Psize;
+  font-weight: 400;
+}
+
+@mixin flex($direction: row, $align: flex-start, $justify: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+@mixin regularH2($text-color) {
+  font-family: $Serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: -0.369px;
+  color: $text-color;
+}
 header {
   width: 100%;
   min-height: 200px;
   padding: 40px 165px 82px 165px;
   position: relative;
   overflow-x: hidden;
+
   @media (max-width: 992px) {
     padding: 40px 40px 82px 40px;
   }
@@ -57,6 +79,7 @@ header {
 
     .btn {
       @include pinkButton();
+
       @media (max-width: 700px) {
         display: none;
       }
@@ -73,24 +96,29 @@ header {
   }
 
   section {
-    display: flex;
     margin-top: 74px;
+    display: flex;
     align-items: center;
     justify-content: space-between;
 
     @media (max-width: 992px) {
+      margin-top: 48px;
       flex-direction: column-reverse;
       text-align: center;
       gap: 48px;
-      margin-top: 48px;
     }
+
     .left-side {
       max-width: 546px;
+      //   background-color: aqua;
+
       @media (max-width: 992px) {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 30px;
       }
+
       h1 {
         color: $San-Juan-Blue;
         font-family: $Serif;
@@ -98,22 +126,23 @@ header {
         font-weight: 400;
         line-height: 72px;
         letter-spacing: -0.554px;
+
         @media (max-width: 992px) {
           font-size: 48px;
           line-height: 56px;
         }
+
         @media (max-width: 700px) {
           font-size: 32px;
           line-height: 36px;
-          letter-spacing: -0.246px;
         }
       }
 
       form {
         max-width: 445px;
-        background-color: white;
-        border-radius: 24px;
         margin: 21px 0 16px 0;
+        background-color: $Link-Water-White;
+        border-radius: 24px;
         display: flex;
         justify-content: space-between;
         box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
@@ -125,6 +154,7 @@ header {
           gap: 16px;
           width: 100%;
         }
+
         input[type="text"] {
           background-color: $Link-Water-White;
           color: $Light-San-Juan-Blue;
@@ -134,32 +164,36 @@ header {
           font-family: $Sans;
           border: none;
           outline: none;
-          width: 100%;
+
+          @media (max-width: 700px) {
+            width: 100%;
+          }
         }
 
         input[type="submit"] {
           @include pinkButton();
+
           @media (max-width: 700px) {
             width: 100%;
           }
         }
       }
+
       p {
-        color: $Light-San-Juan-Blue;
-        font-family: $Sans;
-        font-size: $Psize;
-        font-weight: 400;
+        @include regularP($Light-San-Juan-Blue);
         margin-left: 27px;
         span {
           font-weight: 700;
         }
+
         @media (max-width: 992px) {
           margin-left: 0;
         }
       }
     }
   }
-  .first-circle {
+
+  .firs-circle {
     position: absolute;
     top: -172px;
     right: -140px;
@@ -169,6 +203,359 @@ header {
       left: 50%;
       transform: translate(-50%);
       top: -450px;
+    }
+  }
+}
+
+main {
+  .partners {
+    width: 100%;
+    min-height: 100px;
+    background-color: $Mirage-Blue;
+    padding: 93px 165px 107px 165px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 992px) {
+      flex-direction: column-reverse;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    #second-circle {
+      position: absolute;
+      top: -359px;
+      left: -235px;
+
+      @media (max-width: 992px) {
+        top: -548px;
+        left: 50%;
+        transform: translate(-50%);
+      }
+    }
+
+    .partners-left-side {
+      max-width: 445px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      @media (max-width: 992px) {
+        align-items: center;
+        margin-top: 72px;
+      }
+
+      h2 {
+        color: $Link-Water-White;
+        font-family: $Serif;
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 56px;
+        letter-spacing: -0.369px;
+
+        @media (max-width: 700px) {
+          font-size: 32px;
+        }
+      }
+
+      p {
+        @include regularP($Link-Water-White);
+        opacity: 0.5;
+        line-height: 28px;
+      }
+
+      a {
+        color: #fff;
+        padding: 16px 32px;
+        border: 1px solid #fff;
+        border-radius: 24px;
+        width: fit-content;
+        font-size: $Psize;
+        font-family: $Sans;
+      }
+    }
+
+    .partners-logos {
+      width: 536px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      // background-color: red;
+
+      @media (max-width: 700px) {
+        flex-direction: row;
+        width: 327px;
+        // background-color: red;
+        justify-content: space-between;
+      }
+
+      .top-logos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 700px) {
+          flex-direction: column;
+        }
+      }
+
+      .bot-logos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 700px) {
+          flex-direction: column;
+          gap: 70px;
+        }
+      }
+    }
+  }
+  .main-content {
+    width: 100%;
+    min-height: 100px;
+    background-color: $Body-Bg;
+    padding: 143px 165px 96px 165px;
+
+    @media (max-width: 992px) {
+    }
+
+    @media (max-width: 700px) {
+      padding: 80px 24px;
+    }
+
+    .implementation {
+      width: 100%;
+      min-height: 50px;
+      // background-color: white;
+      @include flex(row, center, space-evenly);
+
+      @media (max-width: 992px) {
+        @include flex(column, center, center);
+      }
+
+      img {
+        @media (max-width: 700px) {
+          width: 100%;
+        }
+      }
+
+      .implement {
+        max-width: 445px;
+        @media (max-width: 992px) {
+          text-align: center;
+          max-width: 573px;
+        }
+        h2 {
+          @include regularH2($San-Juan-Blue);
+          margin-bottom: 24px;
+        }
+
+        p {
+          @include regularP($Light-San-Juan-Blue);
+          line-height: 28px;
+        }
+      }
+    }
+  }
+  .ui-ux {
+    @include flex(row, center, space-evenly);
+    width: 100%;
+    min-height: 50px;
+
+    @media (max-width: 992px) {
+      @include flex(column-reverse, center, center);
+      padding: 100px 39px;
+    }
+
+    @media (max-width: 700px) {
+      padding: 24px 80px;
+    }
+
+    img {
+      @media (max-width: 700px) {
+        width: 100%;
+      }
+    }
+    .ui-ux-info {
+      max-width: 445px;
+      @media (max-width: 992px) {
+        text-align: center;
+        max-width: 573px;
+      }
+      h2 {
+        @include regularH2($San-Juan-Blue);
+        margin-bottom: 24px;
+      }
+      p {
+        @include regularP($Light-San-Juan-Blue);
+        line-height: 28px;
+        margin: 0;
+      }
+    }
+  }
+  .boxes {
+    @include flex(row, center, space-evenly);
+    width: 100%;
+    min-height: 50px;
+    padding: 146px 165px 96px 165px;
+
+    @media (max-width: 992px) {
+      text-align: center;
+      max-width: 100%;
+      padding: 100px 39px;
+    }
+
+    @media (max-width: 700px) {
+      text-align: center;
+      max-width: 100%;
+      flex-direction: column;
+      gap: 48px;
+      padding: 80px 24px;
+    }
+    .box {
+      max-width: 350px;
+      @include flex(column, center, center);
+
+      img {
+        margin-bottom: 32px;
+      }
+      h3 {
+        color: $San-Juan-Blue;
+        text-align: center;
+        font-family: $Sans;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 25px;
+        letter-spacing: -0.138px;
+        margin-bottom: 16px;
+      }
+
+      p {
+        @include regularP($Light-San-Juan-Blue);
+        text-align: center;
+      }
+    }
+  }
+  .start {
+    @include flex(row, center, space-evenly);
+    margin-bottom: 96px;
+    @media (max-width: 992px) {
+      text-align: center;
+      max-width: 100%;
+      flex-direction: column;
+      padding: 100px 162px;
+    }
+
+    @media (max-width: 700px) {
+      text-align: center;
+      max-width: 100%;
+      flex-direction: column;
+      gap: 48px;
+      padding: 0 24px 80px 24px;
+    }
+
+    h2 {
+      @include regularH2($San-Juan-Blue);
+      @media (max-width: 700px) {
+        font-size: 32px;
+      }
+    }
+    form {
+      max-width: 445px;
+      margin: 21px 0 16px 0;
+      background-color: $Link-Water-White;
+      border-radius: 24px;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+
+      @media (max-width: 700px) {
+        flex-direction: column;
+        background-color: $Body-Bg;
+        box-shadow: unset;
+        gap: 16px;
+        width: 100%;
+      }
+
+      input[type="text"] {
+        background-color: $Link-Water-White;
+        color: $Light-San-Juan-Blue;
+        padding: 14px 27px;
+        border-radius: 24px;
+        font-size: $Psize;
+        font-family: $Sans;
+        border: none;
+        outline: none;
+
+        @media (max-width: 700px) {
+          width: 100%;
+        }
+      }
+
+      input[type="submit"] {
+        @include pinkButton();
+
+        @media (max-width: 700px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  footer {
+    min-height: 100px;
+    background-color: $Mirage-Blue;
+    padding: 31px 164px;
+    display: flex;
+    justify-content: space-between;
+
+    .footer-div {
+      display: flex;
+      nav {
+        display: flex;
+        align-items: center;
+
+        ul {
+          display: flex;
+          list-style: none;
+          gap: 40px;
+          margin-left: 64px;
+
+          @media (max-width: 700px) {
+            display: none;
+          }
+
+          li {
+            a {
+              color: $San-Juan-Blue;
+              font-family: $Sans;
+              font-size: $Psize;
+              font-weight: 700;
+
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .social-icons {
+      display: flex;
+      gap: 24px;
+      img {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 }

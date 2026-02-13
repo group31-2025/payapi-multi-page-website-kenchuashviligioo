@@ -83,17 +83,17 @@ header nav #menu {
   }
 }
 header section {
-  display: flex;
   margin-top: 74px;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
 @media (max-width: 992px) {
   header section {
+    margin-top: 48px;
     flex-direction: column-reverse;
     text-align: center;
     gap: 48px;
-    margin-top: 48px;
   }
 }
 header section .left-side {
@@ -104,6 +104,7 @@ header section .left-side {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
 }
 header section .left-side h1 {
@@ -124,14 +125,13 @@ header section .left-side h1 {
   header section .left-side h1 {
     font-size: 32px;
     line-height: 36px;
-    letter-spacing: -0.246px;
   }
 }
 header section .left-side form {
   max-width: 445px;
-  background-color: white;
-  border-radius: 24px;
   margin: 21px 0 16px 0;
+  background-color: #fbfcfe;
+  border-radius: 24px;
   display: flex;
   justify-content: space-between;
   box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
@@ -154,7 +154,11 @@ header section .left-side form input[type=text] {
   font-family: "Public Sans";
   border: none;
   outline: none;
-  width: 100%;
+}
+@media (max-width: 700px) {
+  header section .left-side form input[type=text] {
+    width: 100%;
+  }
 }
 header section .left-side form input[type=submit] {
   margin-left: auto;
@@ -190,16 +194,424 @@ header section .left-side p span {
     margin-left: 0;
   }
 }
-header .first-circle {
+header .firs-circle {
   position: absolute;
   top: -172px;
   right: -140px;
   z-index: -1;
 }
 @media (max-width: 992px) {
-  header .first-circle {
+  header .firs-circle {
     left: 50%;
     transform: translate(-50%);
     top: -450px;
   }
+}
+
+main .partners {
+  width: 100%;
+  min-height: 100px;
+  background-color: #1b262f;
+  padding: 93px 165px 107px 165px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  main .partners {
+    flex-direction: column-reverse;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+}
+@media (max-width: 700px) {
+  main .partners {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+main .partners #second-circle {
+  position: absolute;
+  top: -359px;
+  left: -235px;
+}
+@media (max-width: 992px) {
+  main .partners #second-circle {
+    top: -548px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+main .partners .partners-left-side {
+  max-width: 445px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+@media (max-width: 992px) {
+  main .partners .partners-left-side {
+    align-items: center;
+    margin-top: 72px;
+  }
+}
+main .partners .partners-left-side h2 {
+  color: #fbfcfe;
+  font-family: "DM Serif Display";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: -0.369px;
+}
+@media (max-width: 700px) {
+  main .partners .partners-left-side h2 {
+    font-size: 32px;
+  }
+}
+main .partners .partners-left-side p {
+  color: #fbfcfe;
+  font-family: "Public Sans";
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.5;
+  line-height: 28px;
+}
+main .partners .partners-left-side a {
+  color: #fff;
+  padding: 16px 32px;
+  border: 1px solid #fff;
+  border-radius: 24px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 15px;
+  font-family: "Public Sans";
+}
+main .partners .partners-logos {
+  width: 536px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (max-width: 700px) {
+  main .partners .partners-logos {
+    flex-direction: row;
+    width: 327px;
+    justify-content: space-between;
+  }
+}
+main .partners .partners-logos .top-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 700px) {
+  main .partners .partners-logos .top-logos {
+    flex-direction: column;
+  }
+}
+main .partners .partners-logos .bot-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 700px) {
+  main .partners .partners-logos .bot-logos {
+    flex-direction: column;
+    gap: 70px;
+  }
+}
+main .main-content {
+  width: 100%;
+  min-height: 100px;
+  background-color: #edf3f8;
+  padding: 143px 165px 96px 165px;
+}
+@media (max-width: 700px) {
+  main .main-content {
+    padding: 80px 24px;
+  }
+}
+main .main-content .implementation {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+@media (max-width: 992px) {
+  main .main-content .implementation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 700px) {
+  main .main-content .implementation img {
+    width: 100%;
+  }
+}
+main .main-content .implementation .implement {
+  max-width: 445px;
+}
+@media (max-width: 992px) {
+  main .main-content .implementation .implement {
+    text-align: center;
+    max-width: 573px;
+  }
+}
+main .main-content .implementation .implement h2 {
+  font-family: "DM Serif Display";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: -0.369px;
+  color: #36536b;
+  margin-bottom: 24px;
+}
+main .main-content .implementation .implement p {
+  color: #6c8294;
+  font-family: "Public Sans";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+}
+main .ui-ux {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  min-height: 50px;
+}
+@media (max-width: 992px) {
+  main .ui-ux {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 39px;
+  }
+}
+@media (max-width: 700px) {
+  main .ui-ux {
+    padding: 24px 80px;
+  }
+}
+@media (max-width: 700px) {
+  main .ui-ux img {
+    width: 100%;
+  }
+}
+main .ui-ux .ui-ux-info {
+  max-width: 445px;
+}
+@media (max-width: 992px) {
+  main .ui-ux .ui-ux-info {
+    text-align: center;
+    max-width: 573px;
+  }
+}
+main .ui-ux .ui-ux-info h2 {
+  font-family: "DM Serif Display";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: -0.369px;
+  color: #36536b;
+  margin-bottom: 24px;
+}
+main .ui-ux .ui-ux-info p {
+  color: #6c8294;
+  font-family: "Public Sans";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
+}
+main .boxes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  min-height: 50px;
+  padding: 146px 165px 96px 165px;
+}
+@media (max-width: 992px) {
+  main .boxes {
+    text-align: center;
+    max-width: 100%;
+    padding: 100px 39px;
+  }
+}
+@media (max-width: 700px) {
+  main .boxes {
+    text-align: center;
+    max-width: 100%;
+    flex-direction: column;
+    gap: 48px;
+    padding: 80px 24px;
+  }
+}
+main .boxes .box {
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .boxes .box img {
+  margin-bottom: 32px;
+}
+main .boxes .box h3 {
+  color: #36536b;
+  text-align: center;
+  font-family: "Public Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.138px;
+  margin-bottom: 16px;
+}
+main .boxes .box p {
+  color: #6c8294;
+  font-family: "Public Sans";
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+}
+main .start {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 96px;
+}
+@media (max-width: 992px) {
+  main .start {
+    text-align: center;
+    max-width: 100%;
+    flex-direction: column;
+    padding: 100px 162px;
+  }
+}
+@media (max-width: 700px) {
+  main .start {
+    text-align: center;
+    max-width: 100%;
+    flex-direction: column;
+    gap: 48px;
+    padding: 0 24px 80px 24px;
+  }
+}
+main .start h2 {
+  font-family: "DM Serif Display";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: -0.369px;
+  color: #36536b;
+}
+@media (max-width: 700px) {
+  main .start h2 {
+    font-size: 32px;
+  }
+}
+main .start form {
+  max-width: 445px;
+  margin: 21px 0 16px 0;
+  background-color: #fbfcfe;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+}
+@media (max-width: 700px) {
+  main .start form {
+    flex-direction: column;
+    background-color: #edf3f8;
+    box-shadow: unset;
+    gap: 16px;
+    width: 100%;
+  }
+}
+main .start form input[type=text] {
+  background-color: #fbfcfe;
+  color: #6c8294;
+  padding: 14px 27px;
+  border-radius: 24px;
+  font-size: 15px;
+  font-family: "Public Sans";
+  border: none;
+  outline: none;
+}
+@media (max-width: 700px) {
+  main .start form input[type=text] {
+    width: 100%;
+  }
+}
+main .start form input[type=submit] {
+  margin-left: auto;
+  padding: 14px 24px;
+  border-radius: 24px;
+  background-color: #ba4270;
+  color: #fbfcfe;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Public Sans";
+  border: none;
+}
+main .start form input[type=submit]:hover {
+  background-color: #da6d97;
+}
+@media (max-width: 700px) {
+  main .start form input[type=submit] {
+    width: 100%;
+  }
+}
+main footer {
+  min-height: 100px;
+  background-color: #1b262f;
+  padding: 31px 164px;
+  display: flex;
+  justify-content: space-between;
+}
+main footer .footer-div {
+  display: flex;
+}
+main footer .footer-div nav {
+  display: flex;
+  align-items: center;
+}
+main footer .footer-div nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin-left: 64px;
+}
+@media (max-width: 700px) {
+  main footer .footer-div nav ul {
+    display: none;
+  }
+}
+main footer .footer-div nav ul li a {
+  color: #36536b;
+  font-family: "Public Sans";
+  font-size: 15px;
+  font-weight: 700;
+}
+main footer .footer-div nav ul li a:hover {
+  color: #fff;
+}
+main footer .social-icons {
+  display: flex;
+  gap: 24px;
+}
+main footer .social-icons img {
+  width: 24px;
+  height: 24px;
 }/*# sourceMappingURL=style.css.map */
