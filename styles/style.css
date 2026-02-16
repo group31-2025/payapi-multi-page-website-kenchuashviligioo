@@ -438,7 +438,6 @@ main .boxes {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  min-height: 50px;
   padding: 146px 165px 96px 165px;
 }
 @media (max-width: 992px) {
@@ -573,45 +572,77 @@ main .start form input[type=submit]:hover {
     width: 100%;
   }
 }
-main footer {
+
+footer {
   min-height: 100px;
   background-color: #1b262f;
-  padding: 31px 164px;
+  padding: 31px 165px;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  overflow: hidden;
 }
-main footer .footer-div {
+@media (max-width: 700px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    padding: 41px 120px 0 120px;
+  }
+}
+footer .footer-div {
   display: flex;
 }
-main footer .footer-div nav {
+footer .footer-div img {
+  width: 135px;
+}
+@media (max-width: 700px) {
+  footer .footer-div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+footer .footer-div nav {
   display: flex;
   align-items: center;
 }
-main footer .footer-div nav ul {
+footer .footer-div nav ul {
   display: flex;
   list-style: none;
   gap: 40px;
   margin-left: 64px;
 }
 @media (max-width: 700px) {
-  main footer .footer-div nav ul {
-    display: none;
+  footer .footer-div nav ul {
+    flex-direction: column;
+    margin-top: 40px;
+    margin-left: 39px;
   }
 }
-main footer .footer-div nav ul li a {
+footer .footer-div nav ul li a {
   color: #36536b;
   font-family: "Public Sans";
   font-size: 15px;
   font-weight: 700;
 }
-main footer .footer-div nav ul li a:hover {
+footer .footer-div nav ul li a:hover {
   color: #fff;
 }
-main footer .social-icons {
+footer .social-icons {
   display: flex;
   gap: 24px;
 }
-main footer .social-icons img {
+@media (max-width: 700px) {
+  footer .social-icons {
+    margin-top: 40px;
+  }
+}
+footer .social-icons a img {
   width: 24px;
   height: 24px;
+}
+footer #footer-circle {
+  position: absolute;
+  right: -390px;
+  bottom: -540px;
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */

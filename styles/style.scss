@@ -406,7 +406,6 @@ main {
   .boxes {
     @include flex(row, center, space-evenly);
     width: 100%;
-    min-height: 50px;
     padding: 146px 165px 96px 165px;
 
     @media (max-width: 992px) {
@@ -511,51 +510,81 @@ main {
       }
     }
   }
-  footer {
-    min-height: 100px;
-    background-color: $Mirage-Blue;
-    padding: 31px 164px;
+}
+footer {
+  min-height: 100px;
+  background-color: $Mirage-Blue;
+  padding: 31px 165px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 700px) {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    padding: 41px 120px 0 120px;
+  }
+  .footer-div {
+    display: flex;
 
-    .footer-div {
+    img {
+      width: 135px;
+    }
+    @media (max-width: 700px) {
       display: flex;
-      nav {
+      flex-direction: column;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+
+      ul {
         display: flex;
-        align-items: center;
+        list-style: none;
+        gap: 40px;
+        margin-left: 64px;
 
-        ul {
-          display: flex;
-          list-style: none;
-          gap: 40px;
-          margin-left: 64px;
+        @media (max-width: 700px) {
+          // display: none;
+          flex-direction: column;
+          margin-top: 40px;
+          margin-left: 39px;
+        }
 
-          @media (max-width: 700px) {
-            display: none;
-          }
+        li {
+          a {
+            color: $San-Juan-Blue;
+            font-family: $Sans;
+            font-size: $Psize;
+            font-weight: 700;
 
-          li {
-            a {
-              color: $San-Juan-Blue;
-              font-family: $Sans;
-              font-size: $Psize;
-              font-weight: 700;
-
-              &:hover {
-                color: #fff;
-              }
+            &:hover {
+              color: #fff;
             }
           }
         }
       }
     }
-    .social-icons {
-      display: flex;
-      gap: 24px;
+    
+  }
+  .social-icons {
+    display: flex;
+    gap: 24px;
+    @media (max-width: 700px) {
+      margin-top: 40px;
+    }
+    a {
       img {
         width: 24px;
         height: 24px;
       }
     }
+  }
+  #footer-circle {
+    position: absolute;
+    right: -390px;
+    bottom: -540px;
+    z-index: -1;
   }
 }
